@@ -1,0 +1,59 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --padding-global: min(5vw, 32px);
+  --padding-card: 20px;
+  --padding-mobile: 16px;
+  --padding-section: 24px;
+  --padding-header: 16px;
+  --padding-footer: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding-left: var(--padding-global);
+  padding-right: var(--padding-global);
+}
+
+.content-section {
+  padding: var(--padding-section);
+}
+
+.card {
+  padding: var(--padding-card);
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --padding-global: var(--padding-mobile);
+    --padding-card: 16px;
+    --padding-section: 16px;
+    --padding-header: 12px;
+    --padding-footer: 16px;
+  }
+}
